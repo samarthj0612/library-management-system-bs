@@ -5,9 +5,9 @@ import ProtectedRoute from '../_components/ProtectedRoute'
 
 const Profile = () => {
   return (
-    <ProtectedRoute>
+    // <ProtectedRoute>
       <div>Profile</div>
-    </ProtectedRoute>
+    // </ProtectedRoute>
   )
 }
 
