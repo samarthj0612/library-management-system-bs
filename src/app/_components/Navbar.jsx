@@ -60,7 +60,7 @@ const Navbar = () => {
             </Link>
           ) : (
             <>
-              {user?.email}
+              {/* {user?.email} */}
               <button onClick={logoutHandler}>Logout</button>
             </>
           )}

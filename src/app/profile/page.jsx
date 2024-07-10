@@ -6,7 +6,7 @@ import ProtectedRoute from '../_components/ProtectedRoute'
 const Profile = () => {
   return (
     <ProtectedRoute>
-      <div>Profile</div>
+      <div style={{color:"white"}}>Profile</div>
     </ProtectedRoute>
   )
 }
