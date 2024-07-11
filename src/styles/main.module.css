@@ -20,9 +20,9 @@
   flex: 1;
   padding: 12px;
 }
-.main #left{
+/* .main #left{
   
-}
+} */
 .main #left p{
   font-size: 20px;
 }
@@ -36,9 +36,9 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.363);
   font-size: 1.1vw;
 }
-.main #right{
+/* .main #right{
   
-}
+} */
 .main #right img{
   height: 100%;
 }
