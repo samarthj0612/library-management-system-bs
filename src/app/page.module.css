@@ -5,8 +5,7 @@
   background-size: cover;
   background-repeat: repeat-y;
   background-position: top;
-} */
-
+}
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   
