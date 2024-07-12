@@ -7,11 +7,11 @@ const Navbar1 = () => {
   return (
     <div className={styles.navbar}>
       <a href="/">
-        <h3>Navbar1</h3>
+        <h3 style={{color:"black"}}>Navbar1</h3>
       </a>
       <div className={styles.navlinks}>
         <a href="/">Home</a>
-        <a href="/libraries">Libraries</a>
+        <a href="/facilities">Facilities</a>
         <a href="/services">Services</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>

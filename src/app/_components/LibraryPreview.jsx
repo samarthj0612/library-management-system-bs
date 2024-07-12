@@ -7,7 +7,8 @@ const LibraryPreview = () => {
   return (
     <div>
       <div id="library">
-        <img className='' src="/img/libraries/img2.jpg" alt="" />
+        {/* <img className='' src="/img/libraries/img2.jpg" alt="" /> */}
+        
         <h4>Library, Bhopal</h4>
       </div>
     </div>

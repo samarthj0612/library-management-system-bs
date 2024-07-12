@@ -1,0 +1,188 @@
+.contactContainer {
+  padding: 20px;
+}
+
+.heading {
+  color: #9e2a39;
+  font-size: 3vw;
+  font-weight: bold;
+  text-align: center;
+}
+
+.para {
+  color: black;
+  font-size: 25px;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.formMapContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 90%;
+  padding: 20px;
+  margin: auto;
+}
+
+.formContainer {
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formHeading {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #9e2a39;
+  font-weight: bold;
+}
+
+.bookImage {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contactForm label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.contactForm button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #9e2a39;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: center;
+  font-weight: bold;
+}
+
+.mapContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.map {
+  width: 100%;
+  height: 600px;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+.details {
+  padding: 20px;
+  width: 100%;
+}
+
+.contactDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.contactImage {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.contactInfo p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .formMapContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .formContainer,
+  .mapContainer {
+    flex: 1;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .details {
+    padding: 40px;
+  }
+
+  .contactDetailsContainer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .contactDetail {
+    width: 45%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .formHeading {
+    font-size: 32px;
+  }
+
+  .map {
+    height: 680px;
+  }
+
+  .contactDetail {
+    width: 30%;
+  }
+}
+
+@media (max-width: 767px) {
+  .contactDetail {
+    width: 100%;
+  }
+}
