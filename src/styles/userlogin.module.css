@@ -1,0 +1,143 @@
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block {
+    width: 60%;
+    border: 1px solid white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.insideBlock {
+    display: flex;
+    width: 100%;
+}
+
+.left {
+    width: 50%;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 0 0 8px;
+}
+
+.right {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.rememberForgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.forgot {
+    color: #6D2932;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.loginBtn {
+    background-color: #6D2932;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+   
+}
+
+.newUser {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.signUpBtn {
+    background-color: #fff;
+    color: #6D2932;
+    padding: 10px;
+    border: 1px solid #6D2932;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1024px) {
+    .block {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .block {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .img {
+        height: auto;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .right {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .right {
+        padding: 10px;
+    }
+
+    .form {
+        gap: 10px;
+    }
+
+    .loginBtn, .signUpBtn {
+        padding: 8px;
+    }
+}

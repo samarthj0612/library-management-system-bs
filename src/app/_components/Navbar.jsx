@@ -15,9 +15,9 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light p-4">
+    <nav className="navbar navbar-expand-lg  p-1" style={{ backgroundColor: '#F3DAE1' }}>
       <div className="container-fluid">
-        <Link className="navbar-brand" href="/">Dream Library</Link>
+        {/* <Link className="navbar-brand" href="/">Dream Library</Link> */}
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -27,7 +27,7 @@ const Navbar = () => {
               <Link className="nav-link active" aria-current="page" href="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/services">Services</Link>
+              <Link className="nav-link" href="/services">Branches</Link>
             </li>
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,7 +45,7 @@ const Navbar = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/about">About</Link>
+              <Link className="nav-link" href="/about">Facilities</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="/contact">Contact</Link>
@@ -55,7 +55,7 @@ const Navbar = () => {
             <Link href='/auth/login' className="d-flex align-items-center">
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button> */}
-              Login/Signup
+             Existing User Login
               <CiLogin size={24} />
             </Link>
           ) : (

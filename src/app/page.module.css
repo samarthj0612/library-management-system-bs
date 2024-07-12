@@ -1,10 +1,10 @@
-/* .main {
-  padding: 2rem;
+.main {
+  /* padding: 2rem; */
   min-height: 100vh;
-  background-image: url("/background.png");
+  /* background-image: url("/img/background.png");
   background-size: cover;
   background-repeat: repeat-y;
-  background-position: top;
+  background-position: top; */
 }
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {

@@ -11,7 +11,7 @@ const Navbar1 = () => {
       </a>
       <div className={styles.navlinks}>
         <a href="/">Home</a>
-        <a href="/libraries">Libraries</a>
+        <a href="/facilities">Facilities</a>
         <a href="/services">Services</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
