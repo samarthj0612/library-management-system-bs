@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@/styles/studentloginform.module.css';
+import styles from '@/styles/loginform.module.css';
 import Link from 'next/link';
 
 const Services = () => {
@@ -29,7 +29,9 @@ const Services = () => {
                   </label>
                   <a href="#" className={styles.forgot}>Forgot Password</a>
                 </div>
+                <Link href={'/profile'}>
                 <button type="submit" className={styles.loginBtn}>Login</button>
+                </Link>
               </form>
               <div className={styles.newUser}>
                 <p>New User</p>

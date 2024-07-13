@@ -52,7 +52,7 @@ const Navbar = () => {
             </li>
           </ul>
           {!user ? (
-            <Link href='/auth/login' className="d-flex align-items-center">
+            <Link href='/loginform' className="d-flex align-items-center">
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">Search</button> */}
              Existing User Login
