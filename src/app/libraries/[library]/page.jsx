@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import libraryData from '../../../data/libraries'
 import LoadingSkeleton from '@/app/_components/LoadingSkeleton'
 import styles from '@/styles/library.module.css'
+import Link from 'next/link'
 
 const Library = () => {
   const params = useParams();
@@ -136,7 +137,9 @@ const Library = () => {
             <div className={styles.timingsMessage}>Our library is open every day from 7:00 AM to 11:00 PM, including Sundays and holidays.
             </div>
             </div>
+            <Link href={'/registration'}>
         <button className={styles.b}>ENROLL NOW</button>
+        </Link>
         
         </div>
       ) : (
