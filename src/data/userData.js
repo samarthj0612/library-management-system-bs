@@ -5,6 +5,8 @@ module.exports = [
         seatNo: '29',
         joiningDate: '05 May 2024',
         YourPlanType: 'Monthly',
-        RenewalDate: '05 May 2025' 
+        RenewalDate: '05 May 2025',
+        image: '/img/libraries/img43.jpg'
+        
     }
 ]

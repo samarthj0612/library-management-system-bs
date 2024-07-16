@@ -138,6 +138,31 @@ const Library = () => {
             </div>
             </div>
             <Link href={'/registration'}>
+
+
+            <div className={styles.servicesBlock}>
+            <div className={styles.service}>
+              <h3 className={styles.serviceHeading}>ROOM</h3>
+              <p>Comfortable rooms available for students.</p>
+              <p>Contact: 123-456-7890</p>
+            </div>
+            <div className={styles.service}>
+              <h3 className={styles.serviceHeading}>TIFFIN</h3>
+              <p>Healthy tiffin services at affordable prices.</p>
+              <p>Contact: 098-765-4321</p>
+            </div>
+            <div className={styles.service}>
+              <h3 className={styles.serviceHeading}>HOME TUTOR</h3>
+              <p>Experienced tutors for personalized learning.</p>
+              <p>Contact: 456-789-0123</p>
+            </div>
+            <div className={styles.service}>
+              <h3 className={styles.serviceHeading}>DONATE BOOK</h3>
+              <p>Donate books and spread knowledge.</p>
+              <p>Contact: 789-012-3456</p>
+            </div>
+          </div>
+
         <button className={styles.b}>ENROLL NOW</button>
         </Link>
         

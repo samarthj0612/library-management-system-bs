@@ -5,6 +5,7 @@ const Notice = () =>{
     return (
         <Layout>
             <div>
+                HI
             </div>
         </Layout>
     

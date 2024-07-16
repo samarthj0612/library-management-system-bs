@@ -8,10 +8,10 @@ const User = () =>{
             <div className="profile">
                 <h5>Welcome: Username</h5>
                 <div className="profileBox">
-                    <div className="username">
-                        <p>username</p>
-                    <div className='line' style={{position:"relative",left:"200px"}}></div>
+                    <div className="profileImage">
+                        <img src={data[0].image} alt="Profile" />
                     </div>
+                    
                     <div className="profileData">
                         {data.map(item=>(
                             <div key={item.id}>
