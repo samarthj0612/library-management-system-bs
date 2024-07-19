@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../admin/page';
+import Layout from'../../admin/page';
 import data from '../../data/booksData';
 import Link from 'next/link';
 

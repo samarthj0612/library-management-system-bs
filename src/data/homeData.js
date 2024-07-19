@@ -7,8 +7,7 @@ const branches = [
   { route: 'library6', image: '/img/libraries/1.jpg', location: 'For Franchise/open new library'},
 ];
 
-const facilities = [
-  {
+const facilities = [{
       title: 'Peaceful, Fresh & Energetic environment',
       description: 'Our library offers a peaceful and refreshing environment with plenty of natural light. Enjoy a quiet space that keeps you focused and energized, perfect for studying and relaxation.',
       image: '/img/libraries/img34.jpg',

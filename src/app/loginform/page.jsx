@@ -1,8 +1,44 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import styles from '@/styles/loginform.module.css';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-const Services = () => {
+const LoginForm = () => {
+  const [email, setEmail] = useState('samarth@gmail.com');
+  const [password, setPassword] = useState('123456');
+  const [error, setError] = useState('');
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    console.log('email:', email, 'password:', password)
+    e.preventDefault();
+    setError('');
+
+    try {
+      const response = await fetch('http://localhost:3001/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const result = await response.json();
+  
+      console.log(result)
+
+      if (response.ok) {
+        router.push('/profile');
+      } else {
+        setError(result.message);
+      }
+    } catch (error) {
+      setError('An unexpected error occurred');
+    }
+  };
+
   return (
     <>
       <div className={styles.container}>
@@ -14,14 +50,29 @@ const Services = () => {
             <div className={styles.right}>
               <h2>Welcome to Dream Library</h2>
               <p>LogIn to your account</p>
-              <form className={styles.form}>
+              {error && <p className={styles.error}>{error}</p>}
+              <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
-                  <label htmlFor="mobile">Mobile No.</label>
-                  <input type="text" id="mobile" name="mobile" className={styles.input} />
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    className={styles.input}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="password">Password</label>
-                  <input type="password" id="password" name="password" className={styles.input} />
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    className={styles.input}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </div>
                 <div className={styles.rememberForgot}>
                   <label>
@@ -29,23 +80,20 @@ const Services = () => {
                   </label>
                   <a href="#" className={styles.forgot}>Forgot Password</a>
                 </div>
-                <Link href={'/profile'}>
                 <button type="submit" className={styles.loginBtn}>Login</button>
-                </Link>
               </form>
               <div className={styles.newUser}>
                 <p>New User</p>
-                <Link href= {'/registration'}>
-                <button className={styles.signUpBtn}>Sign Up</button>
+                <Link href={'/registration'}>
+                  <button className={styles.signUpBtn}>Sign Up</button>
                 </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-   
     </>
   );
 };
 
-export default Services;
+export default LoginForm;

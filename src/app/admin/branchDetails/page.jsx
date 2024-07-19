@@ -1,31 +1,31 @@
 import React from 'react';
 import Layout from '../page';
-import Data from '../../../data/branchData';
+import { branches } from '../../../data/homeData'; 
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Notice = () =>{
-    return (
-        <Layout>
-            <div className='branch'>
-            {Data.map((item) => (
-            <div className='branch1' key={item.id}>
-                <Link href={`/admin/Form`}>
-                    <Image 
-                     src={item.img}
-                     height={150}
-                     width={350}
-                     style={{borderRadius: "10px 10px 0px 0px"}}
-                     />{item.name}
-                </Link>
-
-                    <p>{item.description}</p>
-            </div>
-          ))}
-            </div>
-        </Layout>
-    
-    )
+const BranchDetails = () => {
+  return (
+    <Layout>
+      <div className='branch'>
+        {branches.map((branch, index) => (
+          <div key={index} className='branchContainer'>
+            <Link href={`/admin/Form`}>
+            <div className='imageOverlay'>
+              <Image 
+                src={branch.image}
+                height={250}
+                width={350}
+                alt={`Image of ${branch.location}`}
+              />
+              <div>{branch.location}</div>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </Layout>
+  );
 }
 
-export default Notice;
+export default BranchDetails;

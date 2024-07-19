@@ -39,10 +39,14 @@ const Library = () => {
             ></iframe>
           </div>
 
-          <div className={styles.totalSeats}>Total Seats:{data.totalSeats}</div>
-          <div className={styles.availableSeats}>Available Seats</div>
+          <div className={styles.timingBlock}>
+            <h2 className={styles.timingTitle}>Timings</h2>
+            <div className={styles.timingInsideBlock}>Our library is open every day from 7:00 AM to 11:00 PM, including Sundays and holidays.</div>
+            {/* <div className={styles.timingsMessage}>Monday-Sunday <strong>(07:00 am-11:00 pm)</strong></div> */}
+            </div>
 
-          
+          {/* <div className={styles.totalSeats}>Total Seats:{data.totalSeats}</div> */}
+          <div className={styles.availableSeats}>Available Seats</div>          
              
            <h2 className={styles.plan}>Choose your right plan</h2>
             <div className={styles.planBlock}>
@@ -131,15 +135,8 @@ const Library = () => {
             </div>
           </div>
 
-          <div className={styles.timingBlock}>
-            <h2 className={styles.timingStyle}>Timings</h2>
-            <div className={styles.timingInsideBlock}>Monday-Sunday <strong>(07:00 am-11:00 pm)</strong></div>
-            <div className={styles.timingsMessage}>Our library is open every day from 7:00 AM to 11:00 PM, including Sundays and holidays.
-            </div>
-            </div>
+         
             <Link href={'/registration'}>
-
-
             <div className={styles.servicesBlock}>
             <div className={styles.service}>
               <h3 className={styles.serviceHeading}>ROOM</h3>

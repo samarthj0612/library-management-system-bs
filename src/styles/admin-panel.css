@@ -77,8 +77,21 @@
 }
 .branch{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding:20px;
 }
+.branchContainer{
+    position: relative;
+    opacity: 50;
+  }
+
+.imageOverlay {
+    position: relative;
+    opacity: 4; 
+}
+
+
 .formBox{
     height: 90vh;
     width: 90%;
@@ -121,3 +134,4 @@ th, td {
     border:2px solid black;
     font-weight: 500;
 }
+

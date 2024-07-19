@@ -42,46 +42,47 @@ const TopperCard = ({ name, image, exam, location, rank, post }) => {
       <p>{exam}</p>
       <p>Rank: {rank}</p>
       <p>Post: {post}</p>
-      </div>
+    </div>
   );
 };
 
 const HomePage = () => {
   return (
     <>
-    
-      <div style={{position: "relative"}}>
+
+      <div style={{ position: "relative" }}>
         <img className={styles.image} src="/img/libraries/img3.jpg" alt="Library" />
         <h1 className={styles.heading}>Welcome to our  Library</h1>
         <h1 className={styles.subHeading}>Turn your Dream into Reality</h1>
       </div>
 
 
-      <div id='branches' className={styles.branchesContainer}>
+
+      <div id='facilities' className={styles.facilitiesHeading}>Our Facilities</div>
+      <div className={styles.facilitiesBlocks} >
+        {facilities.map((facility, idx) => {
+          return (
+            <FacilityComponent
+              idx={idx}
+              title={facility.title}
+              description={facility.description}
+              image={facility.image}
+              imagePosition={facility.imagePosition}
+            />)
+        })}
+      </div>
+
+      <div id='Branches' className={styles.branchesContainer}>
         <p className={styles.branchesTitle}>Find us in multiple prime locations to serve you better.</p>
         <div className={styles.branchesCardContainer}>
           {branches.map((branch, index) => (
-            <LibraryCard key={index} 
-                         image={branch.image} location={branch.location} 
-                         route={branch.route} />
+            <LibraryCard key={index}
+              image={branch.image} location={branch.location}
+              route={branch.route} />
           ))}
         </div>
 
 
-        <div id='facilities' className={styles.facilitiesHeading}>Our Facilities</div>
-        <div className={styles.facilitiesBlocks} >
-          {facilities.map((facility, idx) => {
-            return (
-              <FacilityComponent
-                idx={idx}
-                title={facility.title}
-                description={facility.description}
-                image={facility.image}
-                imagePosition={facility.imagePosition}
-              />)
-          })}     
-
-        </div>
 
         <div className={styles.toppersContainer}>
           <div className={styles.toppersheading}>Congratulations</div>
@@ -94,12 +95,12 @@ const HomePage = () => {
                 exam={topper.exam}
                 rank={topper.rank}
                 post={topper.post}
-                
+
               />
             ))}
           </div>
-      
-        
+
+
         </div>
       </div>
       {/* <LibraryPreview /> */}
