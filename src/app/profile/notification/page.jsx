@@ -7,7 +7,6 @@ const Notifications = () =>{
             <div className="Notifications">
                 <h5>Welcome: Username</h5>
                 <div className="data">
-                    <div>Books Issued</div>
                     <div>Renewal Date Reminder</div>
                 </div>
             </div>

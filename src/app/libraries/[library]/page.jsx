@@ -13,6 +13,38 @@ const Library = () => {
 
   const [data, setData] = useState({})
 
+// const [loading, setLoading] = useState(true);
+
+// useEffect(() => {
+//   const fetchData = async () => {
+//     if (slug) {
+//       try {
+//         const response = await fetch(`http://localhost:3001/library/:id/${slug}`);
+
+//         if (response.ok) {
+//           const result = await response.json();
+//           setData(result.libraryDetails);
+          
+//         } else {
+//           const text = await response.text();
+//           console.error('Error fetching library details:', text);
+//         }
+//       } catch (error) {
+//         console.error('Error fetching library details:', error.message);
+//       } finally {
+//         setLoading(false);
+//       }
+//     }
+//   };
+
+//   fetchData();
+// }, [slug]);
+
+// if (loading) {
+//   return <LoadingSkeleton />;
+// }
+
+
   useEffect(() => {
     if (slug)
       setData(libraryData[slug]);
@@ -172,3 +204,6 @@ const Library = () => {
 }
 
 export default Library
+
+
+

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import styles from '@/styles/loginform.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import forgot from "../forgotPassword/page";
 
 const LoginForm = () => {
   const [email, setEmail] = useState('samarth@gmail.com');
@@ -78,7 +79,7 @@ const LoginForm = () => {
                   <label>
                     <input type="checkbox" /> Remember me
                   </label>
-                  <a href="#" className={styles.forgot}>Forgot Password</a>
+                  <Link href="/forgotPassword" className={styles.forgot}>Forgot Password</Link>
                 </div>
                 <button type="submit" className={styles.loginBtn}>Login</button>
               </form>

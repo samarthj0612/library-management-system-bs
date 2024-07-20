@@ -1,5 +1,6 @@
 .sidebar {
     width: 23%;
+    transition: all 0.3s ease;
 }
 
 .sidebar-list {
@@ -7,75 +8,202 @@
     padding: 0;
     padding-top: 50px;
 }
-  
+
 .sidebar li {
     margin: 0px;
 }
-  
+
 .sidebar-list li div {
     padding: 30px 30px 20px 20px;
     font-size: 22px;
     font-weight: 600;
     display: flex;
     align-items: center;
+    transition: all 0.3s ease;
 }
-  
+
 .sidebar-list li div:hover {
     background-color: pink;
     color: black;
 }
+
 .active div {
     background-color: pink;
     color: black;
 }
-  
+
 .active div .sidebar-icon {
     filter: invert(0);
 }
-  
+
 .sidebar-icon {
     filter: invert(1);
     margin-right: 5px;
 }
-.line{
-    border: .5px solid black;
+
+.line {
+    border: 0.5px solid black;
+    margin: 10px 0;
 }
+
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 35%;
+    }
+
+    .sidebar-list li div {
+        padding: 20px 20px 15px 15px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 60%;
+    }
+
+    .sidebar-list {
+        padding-top: 30px;
+    }
+
+    .sidebar-list li div {
+        padding: 15px 15px 10px 10px;
+        font-size: 16px;
+    }
+
+    .line {
+        margin: 0px 5px 0px 0px;
+    }
+}
+
+
 
 /* Rules */
-.RandR{
-    position: relative;
-    top: 30px;
-}
-.RandR ul li{
-    font-size: 20px;
-    margin:0 20px;
+/* Rules Container */
+.rules-container {
+    margin-left: 20px;
+    padding: 20px;
 }
 
-/* Payment History */
-.table_content{
-    margin:50px auto 20px auto;
+/* Rules Box */
+.rules-box {
+    box-shadow: 0px 0px 15px gray;
+    border: 0.5px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
 }
+
+/* Rules Header */
+.rules-box h2 {
+    margin-bottom: 20px;
+}
+
+/* Rules List */
+.rules-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.rules-list li {
+    font-size: 20px;
+    margin: 0 20px 15px;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .rules-container {
+        margin-left: 10px;
+        padding: 15px;
+    }
+
+    .rules-box {
+        padding: 15px;
+    }
+
+    .rules-box h2 {
+        margin-bottom: 15px;
+    }
+
+    .rules-list li {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rules-container {
+        margin-left: 5px;
+        padding: 10px;
+    }
+
+    .rules-box {
+        padding: 10px;
+    }
+
+    .rules-box h2 {
+        margin-bottom: 10px;
+    }
+
+    .rules-list li {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+}
+
+
+/* Payment History */
+
+.paymentTable {
+    overflow-x: auto;
+}
+
+.tableWrapper {
+    width: 100%;
+}
+
+.table_content {
+    margin: 50px auto 20px auto;
+    width: 100%; /* Ensure the table takes full width */
+    min-width: 600px; /* Minimum width to prevent collapsing */
+    overflow-x: auto;
+}
+
 table {
     border-collapse: collapse;
-    width: 90%;
+    width: 100%; /* Ensure the table takes full width */
+    white-space: nowrap;
 }
+
 th, td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
 }
-.trhead{
+
+.trhead {
     background-color: #D9D9D9;
 }
 
+
+
 /* Notifications */
-.data{
+.data {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 20px;
     column-gap: 50px;
 }
-.data div{
+
+.data div {
     background-color: #D9D9D9;
     font-size: 20px;
     font-weight: 600;
@@ -84,32 +212,36 @@ th, td {
 }
 
 /* Renew Plan */
-.RenewData{
+.RenewData {
     position: relative;
     top: 50px;
 }
-.RenewData button{
+
+.RenewData button {
     color: white;
     background-color: #860202;
     padding: 10px 20px;
     border-radius: 10px;
-    border:none;
+    border: none;
     font-weight: 500;
     position: relative;
     top: 200px;
 }
-.RenewData #Renew1{
+
+.RenewData #Renew1 {
     background-color: white;
     border: 2px solid black;
 }
-.RenewData form{
+
+.RenewData form {
     position: relative;
     top: 10%;
     left: 7%;
     font-size: 22px;
     display: block;
 }
-.RenewData form input{
+
+.RenewData form input {
     margin-bottom: 50px;
     background-color: white;
     margin-left: 20px;
@@ -118,53 +250,91 @@ th, td {
     outline: none;
 }
 /* Profile */
-.profile{
+.profile {
     margin-left: 20px;
 }
+
 .profileBox {
     box-shadow: 0px 0px 15px gray;
     position: relative;
     top: 30px;
-    border: .5px solid black;
+    border: 0.5px solid black;
     height: 60vh;
     width: 90%;
     display: grid;
-    grid-template-columns: 0.3fr 1fr; /* Adjusted the grid template columns */
-    /* align-items: center; */
+    grid-template-columns: 0.3fr 1fr;
     padding: 20px;
-    
-
+    transition: all 0.3s ease;
 }
 
 .profileImage {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
-    border-right: 1px solid black; /* Vertical line */
-    padding-right: 20px; /* Space between line and image */
+    border-right: 1px solid black;
+    padding-right: 20px;
     height: 100%;
 }
 
 .profileImage img {
-    width: 150px; /* Adjust size as needed */
-    height: 150px; /* Adjust size as needed */
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    margin-right: 20px; /* Adds space between image and profile data */
-
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
 }
 
 .profileData h6 {
     margin: 10px 0px;
 }
 
-
-
-
-.username{
+.username {
     display: flex;
 }
 
-.profileData h6{
-   margin: 40px 0px 0 50px;
+.profileData h6 {
+    margin: 40px 0px 0 50px;
+}
+
+@media (max-width: 768px) {
+    .profileBox {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .profileImage {
+        border-right: none;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .profileImage img {
+        margin-right: 0;
+    }
+
+    .profileData h6 {
+        margin: 10px 0px;
+    }
+
+    .paymentTable {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile {
+        margin-left: 10px;
+    }
+
+    .profileBox {
+        padding: 10px;
+    }
+
+    .profileImage img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profileData h6 {
+        margin: 5px 0px;
+    }
 }

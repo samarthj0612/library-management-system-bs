@@ -71,12 +71,16 @@ const facilities = [{
 
 const toppers = [
   { name: 'Ankita Patkar', image: '/img/libraries/img43.jpg', exam: 'MPPSC', rank: 1, post: 'DY.COLLECTOR', location: 'Krishna Nagar Bhopal' },
-  { name: 'Shashi kumar', image: '/img/libraries/img42.jpg', exam: 'UPSC', rank: 4 , post: 'Assistant Director civil aviation', location: 'Gulmohar Bhopal' },
-  { name: 'Hardik ramani', image: '/img/libraries/img45.jpg', exam: 'GPSC', rank: 3, post: 'State Tax inspector at GST DEP.', location: 'P & T Chouraha' },
-  { name: 'Harendra murmu', image: '/img/libraries/img45.jpg', exam: 'ISRO', rank: 1, post: 'Technical assistant at ISRO', location: 'Raisen' },
-  { name: 'Ram deen', image: '/img/libraries/img45.jpg', exam: 'MPPGCL', rank: 1, post: 'Plant assistant at thermal power plant', location: 'Krishna Nagar Bhopal' },
-  { name: 'Anil ajmer', image: '/img/libraries/img45.jpg', exam: 'MPPGCL', rank: 2, post: 'Plant assistant at thermal power plant', location: 'Gulmohar Bhopal' },
-  { name: 'Sushil sahu', image: '/img/libraries/img41.jpg', exam: 'ISRO,MPPGCL,RAILWAY', rank: 3, post: 'TECH', location: 'P & T Chouraha' },
+  { name: 'Shashi kumar', image: '/img/libraries/img42.jpg', exam: 'UPSC', rank: 4 , post: 'Assistant Director civil aviation' },
+  { name: 'Hardik ramani', image: '/img/libraries/img48.jpg', exam: 'GPSC', rank: 3, post: 'State Tax inspector at GST DEP.'},
+  { name: 'Harendra murmu', image: '/img/libraries/img45.jpg', exam: 'ISRO', rank: 1, post: 'Technical assistant at ISRO'},
+  { name: 'Ram deen', image: '/img/libraries/img45.jpg', exam: 'MPPGCL', rank: 1, post: 'Plant assistant at thermal power plant'},
+  { name: 'Anil ajmer', image: '/img/libraries/img45.jpg', exam: 'MPPGCL', rank: 2, post: 'Plant assistant at thermal power plant' },
+  { name: 'Sushil sahu', image: '/img/libraries/img41.jpg', exam: 'ISRO,MPPGCL,RAILWAY', rank: 3, post: 'TECH' },
+  { name: 'Ajit paswan', image: '/img/libraries/img46.jpg', exam: 'RAILWAY', rank: 3, post: 'Signalling and Telecommunications'},
+  { name: 'Kailash Vyas ', image: '/img/libraries/img47.jpg', exam: 'Malviya National Institute of Technology Jaipur ', rank: 3, post: 'Technical Assistant' },
+  { name: 'Mohammad Faijan', image: '/img/libraries/img49.jpg', exam: 'CTET, UPTET, REET, MPTET qualified', rank: 3, post: 'Primary Teacher'},
+  { name: 'Sushil sahu', image: '/img/libraries/img41.jpg', exam: 'ISRO,MPPGCL,RAILWAY', rank: 3, post: 'TECH'},
 ];
 
 export { branches, facilities, toppers };

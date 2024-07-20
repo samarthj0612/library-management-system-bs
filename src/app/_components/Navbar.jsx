@@ -27,23 +27,12 @@ const Navbar = () => {
               <Link className="nav-link active" aria-current="page" href="/#Home">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/#Branches">Branches</Link>
+
+
+
+              <Link className="nav-link" href="/#branches">Branches</Link>
             </li>
-            <li className="nav-item dropdown">
-              <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Libraries
-              </Link>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><Link className="dropdown-item" href="/libraries/library1">Library-1</Link></li>
-                <li><Link className="dropdown-item" href="/libraries/library2">Library-2</Link></li>
-                <li><Link className="dropdown-item" href="/libraries/library3">Library-3</Link></li>
-                <li><Link className="dropdown-item" href="/libraries/library4">Library-4</Link></li>
-                <li><Link className="dropdown-item" href="/libraries/library5">Library-5</Link></li>
-                <li><Link className="dropdown-item" href="/libraries/library6">Library-6</Link></li>
-                <li><hr className="dropdown-divider" /></li>
-                <li><Link className="dropdown-item" href="#">Something else here</Link></li>
-              </ul>
-            </li>
+           
             <li className="nav-item">
               <Link className="nav-link" href="/#facilities">Facilities</Link>
             </li>
