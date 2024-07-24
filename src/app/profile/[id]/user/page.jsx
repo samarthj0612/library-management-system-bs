@@ -1,11 +1,17 @@
+"use client"
+
 import React from "react";
-import Layout from '../page';
-import data from '../../../data/userData';
+import Layout from '../../page';
+import { useParams } from 'next/navigation'
+import data from '../../../../data/userData';
 
 const User = () =>{
+    const {id} = useParams();
+
     return (
         <Layout>
             <div className="profile">
+            <div>This is this {id} user's profile</div>
                 <h5>Welcome: Username</h5>
                 <div className="profileBox">
                     <div className="profileImage">

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import styles from '@/styles/registration.module.css';
 import libraryData from '../../data/libraries';
-import axios from 'axios';
+// import axios from 'axios';
 import { useRouter } from 'next/navigation';
 
 const RegistrationForm = () => {
@@ -18,7 +18,7 @@ const RegistrationForm = () => {
     examCount: '',
     preparingFor: '',
     previousLibraryDetails: '',
-    profileImageUpload: null,
+    // profileImageUpload: null,
     password: '',
     email: '',
     emergencyContactNo: '',
@@ -27,14 +27,18 @@ const RegistrationForm = () => {
     tenthPercentage: '',
     graduationDegree: '',
     seatNo: '',
-    aadhaarUpload: null,
+    // aadhaarUpload: null,
     confirmPassword: ''
   });
+
+  const [error, setError] = useState(null); // To handle error messages
+  const [loading, setLoading] = useState(false); 
 
   const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
+    console.log("Type", type)
     if (type === 'file') {
       setFormData({ ...formData, [name]: files[0] });
     } else {
@@ -42,38 +46,74 @@ const RegistrationForm = () => {
     }
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (formData.password !== formData.confirmPassword) {
+  //     alert('Passwords do not match');
+  //     return;
+  //   }
+  //   try {
+  //     const formDataToSubmit = new FormData();
+  //     for (const key in formData) {
+  //       formDataToSubmit.append(key, formData[key]);
+  //     }
+      
+  //     // Debug: Log the FormData entries to the console
+  //     for (let pair of formDataToSubmit.entries()) {
+  //       console.log(pair[0]+ ', ' + pair[1]); 
+  //     }
+  
+  //     const response = await fetch('http://localhost:3001/auth/register', {
+  //       method: 'POST',
+  //       body: formDataToSubmit,
+  //     });
+  
+  //     console.log("response", response)
+
+  //     if (response.ok) {
+  //       alert('Registration successful');
+  //       router.push('/login');
+  //     } else {
+  //       const errorData = await response.json();
+  //       console.log("In error")
+  //       console.log("Error", errorData.message )
+  //       alert(errorData.message || 'Registration failed');
+  //     }
+  //   } catch (error) {
+  //     console.error('Registration error:', error);
+  //     alert('Registration failed. Please check your details and try again.');
+  //   }
+  // };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match');
-      return;
-    }
+    
+    setLoading(true);
+    setError(null);
 
     try {
-      const formDataToSubmit = new FormData();
-      console.log(formDataToSubmit)
-      for (const key in formData) {
-        formDataToSubmit.append(key, formData[key]);
-      }
-
       const response = await fetch('http://localhost:3001/auth/register', {
         method: 'POST',
-        body: formDataToSubmit,
         headers: {
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify(formData),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
-        alert('Registration successful');
-        router.push('/login');
+        // Handle successful registration
+        router.push('/success'); // Redirect to a success page
       } else {
-        const errorData = await response.json();
-        alert(errorData.message || 'Registration failed');
+        // Handle errors
+        setError(result.message || 'Something went wrong.');
       }
     } catch (error) {
-      console.error('Registration error:', error);
-      alert('Registration failed. Please check your details and try again.');
+      setError('Network error: ' + error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -89,7 +129,7 @@ const RegistrationForm = () => {
               type="text"
               id="Name"
               name="name"
-              required
+              // required
               value={formData.name}
               onChange={handleChange}
               />
@@ -99,7 +139,7 @@ const RegistrationForm = () => {
                 type="tel"
                 id="phoneNumber"
                 name="phoneNumber"
-                required
+                // required
                 value={formData.phoneNumber}
                 onChange={handleChange}
               />
@@ -178,7 +218,7 @@ const RegistrationForm = () => {
                 value={formData.previousLibraryDetails}
                 onChange={handleChange}
               ></textarea>
-  
+{/*   
               <label htmlFor="profileImageUpload">Upload Profile Image:</label>
               <input
                 type="file"
@@ -186,7 +226,7 @@ const RegistrationForm = () => {
                 name="profileImageUpload"
                 accept=".jpg, .jpeg, .png"
                 onChange={handleChange}
-              />
+              /> */}
   
               <label htmlFor="password">Create Password:</label>
               <input
@@ -194,7 +234,7 @@ const RegistrationForm = () => {
                 id="password"
                 name="password"
                 minLength="8"
-                required
+                // required
                 value={formData.password}
                 onChange={handleChange}
               />
@@ -206,7 +246,7 @@ const RegistrationForm = () => {
                 type="email"
                 id="email"
                 name="email"
-                required
+                // required
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -225,7 +265,7 @@ const RegistrationForm = () => {
                 type="date"
                 id="dateOfBirth"
                 name="dateOfBirth"
-                required
+                // required
                 value={formData.dateOfBirth}
                 onChange={handleChange}
               />
@@ -283,14 +323,14 @@ const RegistrationForm = () => {
                 onChange={handleChange}
               ></textarea>
   
-              <label htmlFor="aadhaarUpload">Upload Aadhaar Card:</label>
+              {/* <label htmlFor="aadhaarUpload">Upload Aadhaar Card:</label>
               <input
                 type="file"
                 id="aadhaarUpload"
                 name="aadhaarUpload"
                 accept=".jpg, .jpeg, .png"
                 onChange={handleChange}
-              />
+              /> */}
   
               <label htmlFor="confirmPassword">Confirm Password:</label>
               <input
@@ -298,7 +338,7 @@ const RegistrationForm = () => {
                 id="confirmPassword"
                 name="confirmPassword"
                 minLength="8"
-                required
+                // required
                 value={formData.confirmPassword}
                 onChange={handleChange}
               />
@@ -312,7 +352,7 @@ const RegistrationForm = () => {
                     type="checkbox"
                     id="followRules"
                     name="followRules"
-                    required
+                    // required
                   />
                   I always follow the rules and regulations of the Library and never do any sort of misbehavior with Staff members.
                 </label>

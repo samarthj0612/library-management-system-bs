@@ -1,11 +1,14 @@
+"use client"
 import React from "react";
-import Layout from '../page';
+import Layout from '../../page';
+import { useParams } from "next/navigation";
 
 const Renew = () =>{
+    const {id} = useParams();
     return (
         <Layout>
             <div className="Renew">
-                <h5>Welcome: Username</h5>
+                <h5>Welcome: {id}</h5>
                 <div className="RenewData">
                     <form action="/" method="post">
                     <div>
