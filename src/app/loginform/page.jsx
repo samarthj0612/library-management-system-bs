@@ -28,10 +28,10 @@ const LoginForm = () => {
 
       const result = await response.json();
   
-      console.log(result)
+      console.log("authrss => ",result.data.email)
 
       if (response.ok) {
-        router.push('/profile');
+        router.push(`/profile/${result.data.UID}/user`);
       } else {
         setError(result.message);
       }

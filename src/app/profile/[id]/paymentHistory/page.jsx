@@ -1,6 +1,6 @@
 import React from "react";
-import data from '../../../data/booksData';
-import Layout from '../page';
+import data from '../../../../data/booksData';
+import Layout from '../../page';
 
 const Payment = () =>{
     return (
