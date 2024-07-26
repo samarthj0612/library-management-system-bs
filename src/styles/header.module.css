@@ -1,0 +1,97 @@
+.header {
+  width: 100%;
+}
+
+.topBar {
+  /* padding: 1rem; */
+  background-color: #9e2a39;
+  height: 40px;
+}
+
+
+.newBox {
+  width: 20%;
+  height: 40px;
+  background-color: #d9c0cd;
+  clip-path: polygon(0 27%, 49% 27%, 62% 100%, 0 100%);
+  position: relative;
+}
+
+
+
+.headerContent {
+  display: flex;
+  flex-direction: row;
+  padding: 0.8rem;
+  background-color: #d9c0cd;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.libraryName h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.icon {
+  height: 30px;
+  margin-right: 8px;
+}
+
+.contactInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    flex-direction: column;
+    align-items: flex-start;
+    }
+
+  .contactInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .libraryName h3 {
+    font-size: 20px;
+  }
+
+  .icon {
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topBar {
+    padding: 0.5rem;
+    height: 30px;
+    
+  }
+
+  .headerContent {
+    padding: 1rem;
+  }
+
+  .libraryName h3 {
+    font-size: 18px;
+  }
+
+  .contactInfo {
+    font-size: 16px;
+  }
+
+  .icon {
+    height: 20px;
+  }
+}
