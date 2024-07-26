@@ -40,6 +40,8 @@
 .line{
     border: .5px solid black;
 }
+
+ /* Notice */
 .notice-box{
     border: 2px solid black;
     width: 80%;
@@ -62,6 +64,14 @@
     border: none;
     outline: none;
 }
+.noticeButton{
+    color: white;
+    padding:10px 30px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #6D2932;
+}
+
 .input-2 input{
     height: 40vh;
     width: 75%;
@@ -128,10 +138,11 @@ th, td {
     text-align: left;
 }
 .formEnd button{
-    background-color: red;
-    padding: 5px 10px;
-    border-radius: 10px;
-    border:2px solid black;
-    font-weight: 500;
+    background-color: #6D2932;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border:1px solid black;
+    color: white;
+    font-weight: bold;
 }
 

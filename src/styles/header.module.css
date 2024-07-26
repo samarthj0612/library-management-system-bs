@@ -3,15 +3,26 @@
 }
 
 .topBar {
-  padding: 1rem;
+  /* padding: 1rem; */
   background-color: #9e2a39;
   height: 40px;
 }
 
+
+.newBox {
+  width: 20%;
+  height: 40px;
+  background-color: #d9c0cd;
+  clip-path: polygon(0 27%, 49% 27%, 62% 100%, 0 100%);
+  position: relative;
+}
+
+
+
 .headerContent {
   display: flex;
   flex-direction: row;
-  padding: 1.2rem;
+  padding: 0.8rem;
   background-color: #d9c0cd;
   justify-content: space-between;
   font-size: 18px;

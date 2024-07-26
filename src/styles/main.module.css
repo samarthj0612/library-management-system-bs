@@ -85,7 +85,7 @@
   color: white;
   font-size: 2vw;
   font-weight: bold;
-  font-family: 'Brush Script MT', cursive; 
+  font-family: initial;
 }
 
 .branchesContainer{

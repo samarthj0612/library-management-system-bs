@@ -13,7 +13,7 @@ const Notice = () =>{
                     <div className='input-2'>
                         < input type="text" placeholder='Write message here'/>
                     </div>
-                        <button style={{backgroundColor:"red",padding:'10px 20px',fontSize:'22px'}}>Save</button>
+                        <button className ='noticeButton'>Save</button>
                 </form>
             </div> 
         </Layout>
