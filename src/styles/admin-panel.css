@@ -1,0 +1,137 @@
+.sidebar {
+    width: 23%;
+}
+  
+.sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    padding-top: 50px;
+}
+  
+.sidebar li {
+    margin: 0px;
+}
+  
+.sidebar-list li div {
+    padding: 30px 30px 20px 20px;
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+  
+.sidebar-list li div:hover {
+    background-color: pink;
+    color: black;
+}
+.active div {
+    background-color: pink;
+    color: black;
+}
+  
+.active div .sidebar-icon {
+    filter: invert(0);
+}
+  
+.sidebar-icon {
+    filter: invert(1);
+    margin-right: 5px;
+}
+.line{
+    border: .5px solid black;
+}
+.notice-box{
+    border: 2px solid black;
+    width: 80%;
+    margin: auto;
+    height: 70%;
+}
+.notice-box form{
+    position: relative;
+    top: 10%;
+    left: 7%;
+    font-size: 22px;
+    display: block;
+}
+.notice-box form input{
+    margin-bottom: 50px;
+    background-color: white;
+    margin-left: 20px;
+    color: black;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+.input-2 input{
+    height: 40vh;
+    width: 75%;
+    
+}
+.books-details{
+    width: 50%;
+}
+.book-tabs{
+    background-color: pink;
+    margin: 20px;
+    padding: 10px;
+}
+.branch{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding:20px;
+}
+.branchContainer{
+    position: relative;
+    opacity: 50;
+  }
+
+.imageOverlay {
+    position: relative;
+    opacity: 4; 
+}
+
+
+.formBox{
+    height: 90vh;
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-left: 40px;
+    text-align: center;
+}
+.formBox .heading{
+    position: relative;
+    top: 7%;
+}
+.formBox .heading h3{
+    font-weight: 600;
+}
+.table_content{
+    margin:50px auto 20px auto;
+}
+table {
+    border-collapse: collapse;
+    width: 90%;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+.trhead{
+    background-color: #D9D9D9;
+}
+.formEnd{
+    position: relative;
+    left:10%;
+    text-align: left;
+}
+.formEnd button{
+    background-color: red;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border:2px solid black;
+    font-weight: 500;
+}
+

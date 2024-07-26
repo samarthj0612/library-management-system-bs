@@ -39,10 +39,14 @@ const Library = () => {
             ></iframe>
           </div>
 
-          <div className={styles.totalSeats}>Total Seats:{data.totalSeats}</div>
-          <div className={styles.availableSeats}>Available Seats</div>
+          <div className={styles.timingBlock}>
+            <h2 className={styles.timingTitle}>Timings</h2>
+            <div className={styles.timingInsideBlock}>Our library is open every day from 7:00 AM to 11:00 PM, including Sundays and holidays.</div>
+            {/* <div className={styles.timingsMessage}>Monday-Sunday <strong>(07:00 am-11:00 pm)</strong></div> */}
+            </div>
 
-          
+          {/* <div className={styles.totalSeats}>Total Seats:{data.totalSeats}</div> */}
+          <div className={styles.availableSeats}>Available Seats</div>          
              
            <h2 className={styles.plan}>Choose your right plan</h2>
             <div className={styles.planBlock}>
@@ -131,13 +135,31 @@ const Library = () => {
             </div>
           </div>
 
-          <div className={styles.timingBlock}>
-            <h2 className={styles.timingStyle}>Timings</h2>
-            <div className={styles.timingInsideBlock}>Monday-Sunday <strong>(07:00 am-11:00 pm)</strong></div>
-            <div className={styles.timingsMessage}>Our library is open every day from 7:00 AM to 11:00 PM, including Sundays and holidays.
-            </div>
-            </div>
+         
             <Link href={'/registration'}>
+            <div className={styles.servicesBlock}>
+            <div className={styles.service}>
+              <h3 className={styles.serviceHeading}>ROOM</h3>
+              <p>Comfortable rooms available for students.</p>
+              <p>Contact: 123-456-7890</p>
+            </div>
+            <div className={styles.service}>
+              <h3 className={styles.serviceHeading}>TIFFIN</h3>
+              <p>Healthy tiffin services at affordable prices.</p>
+              <p>Contact: 098-765-4321</p>
+            </div>
+            <div className={styles.service}>
+              <h3 className={styles.serviceHeading}>HOME TUTOR</h3>
+              <p>Experienced tutors for personalized learning.</p>
+              <p>Contact: 456-789-0123</p>
+            </div>
+            <div className={styles.service}>
+              <h3 className={styles.serviceHeading}>DONATE BOOK</h3>
+              <p>Donate books and spread knowledge.</p>
+              <p>Contact: 789-012-3456</p>
+            </div>
+          </div>
+
         <button className={styles.b}>ENROLL NOW</button>
         </Link>
         

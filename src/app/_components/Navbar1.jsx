@@ -7,7 +7,7 @@ const Navbar1 = () => {
   return (
     <div className={styles.navbar}>
       <a href="/">
-        <h3>Navbar1</h3>
+        <h3 style={{color:"black"}}>Navbar1</h3>
       </a>
       <div className={styles.navlinks}>
         <a href="/">Home</a>
