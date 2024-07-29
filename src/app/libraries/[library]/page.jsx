@@ -2,7 +2,6 @@
 
 import { useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import libraryData from '../../../data/libraries'
 import LoadingSkeleton from '@/app/_components/LoadingSkeleton'
 import styles from '@/styles/library.module.css'
 import Link from 'next/link'
@@ -11,45 +10,33 @@ const Library = () => {
   const params = useParams();
   const slug = params.library; // Access the dynamic segment named 'library'
 
-  const [data, setData] = useState({})
-
-// const [loading, setLoading] = useState(true);
-
-// useEffect(() => {
-//   const fetchData = async () => {
-//     if (slug) {
-//       try {
-//         const response = await fetch(`http://localhost:3001/library/:id/${slug}`);
-
-//         if (response.ok) {
-//           const result = await response.json();
-//           setData(result.libraryDetails);
-          
-//         } else {
-//           const text = await response.text();
-//           console.error('Error fetching library details:', text);
-//         }
-//       } catch (error) {
-//         console.error('Error fetching library details:', error.message);
-//       } finally {
-//         setLoading(false);
-//       }
-//     }
-//   };
-
-//   fetchData();
-// }, [slug]);
-
-// if (loading) {
-//   return <LoadingSkeleton />;
-// }
-
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (slug)
-      setData(libraryData[slug]);
-  }, [])
+    // Function to fetch library data from the backend API
+    const fetchLibraryData = async () => {
+      try {
+        const response = await fetch(`http://localhost:3001/library/${slug}`);
+        if (response.ok) {
+          const result = await response.json();
+          setData(result);
+        } else {
+          console.error('Error fetching data:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
+    fetchLibraryData();
+  }, [slug]);
+
+  if (loading) {
+    return <LoadingSkeleton />;
+  }
 
   return (
     <div>
@@ -61,7 +48,7 @@ const Library = () => {
           <div className={styles.mapContainer}>
             <iframe
               className={styles.map}
-              src={data.location}
+              src={data.locationUrl}
               width="600"
               height="450"
               style={{ border: "0" }}
@@ -74,18 +61,16 @@ const Library = () => {
           <div className={styles.timingBlock}>
             <h2 className={styles.timingTitle}>Timings</h2>
             <div className={styles.timingInsideBlock}>Our library is open every day from 7:00 AM to 11:00 PM, including Sundays and holidays.</div>
-            {/* <div className={styles.timingsMessage}>Monday-Sunday <strong>(07:00 am-11:00 pm)</strong></div> */}
-            </div>
+          </div>
 
-          {/* <div className={styles.totalSeats}>Total Seats:{data.totalSeats}</div> */}
-          <div className={styles.availableSeats}>Available Seats</div>          
-             
-           <h2 className={styles.plan}>Choose your right plan</h2>
-            <div className={styles.planBlock}>
-              <h2 className={styles.pheading}>FEES STRUCTURE</h2>
-              <h2 className={styles.psubheading1}>FULL TIME:</h2>
+          <div className={styles.availableSeats}>Available Seats: {data.totalSeats}</div>
 
-              <div className={styles.tableContainer}>
+          <h2 className={styles.plan}>Choose your right plan</h2>
+          <div className={styles.planBlock}>
+            <h2 className={styles.pheading}>FEES STRUCTURE</h2>
+            <h2 className={styles.psubheading1}>FULL TIME:</h2>
+
+            <div className={styles.tableContainer}>
               <table className={styles.feesTable}>
                 <thead>
                   <tr>
@@ -114,9 +99,8 @@ const Library = () => {
               </table>
             </div>
 
-
             <h2 className={styles.psubheading1}>PART TIME:</h2>
-              <div className={styles.tableContainer}>
+            <div className={styles.tableContainer}>
               <table className={styles.feesTable}>
                 <thead>
                   <tr>
@@ -145,56 +129,54 @@ const Library = () => {
               </table>
             </div>
 
-             <div className={styles.additionalInfo}>
+            <div className={styles.additionalInfo}>
               <h3 className={styles.additionalInfoHeading}>Additional Information</h3>
               <div className={styles.Info}>
-              <p><strong>Reserved Seat (₹100 Extra):</strong></p>
-              <ul>
-                <li>Full-Time: If you pay an extra ₹100, you can reserve a seat and leave your belongings at the desk.</li>
-                <li>Part-Time: If you pay an extra ₹100, you will get a specific allocated seat for your shift, but belongings must be taken along.</li>
-              </ul>
-              <p><strong>Non-Reserved Seat (No Extra Cost):</strong></p>
-              <ul>
-                <li>Full-Time: You will need to take your belongings with you, you can use any available seat.</li>
-                <li>Part-Time: You can use any available seat during your shift.</li>
-              </ul>
-              <p><strong>Shifts Details for Part-Time Plan</strong></p>
-              <ul>
-                <li>First Shift: 7 AM - 3 PM</li>
-                <li>Second Shift: 3 PM - 11 PM</li>
-              </ul>
+                <p><strong>Reserved Seat (₹100 Extra):</strong></p>
+                <ul>
+                  <li>Full-Time: If you pay an extra ₹100, you can reserve a seat and leave your belongings at the desk.</li>
+                  <li>Part-Time: If you pay an extra ₹100, you will get a specific allocated seat for your shift, but belongings must be taken along.</li>
+                </ul>
+                <p><strong>Non-Reserved Seat (No Extra Cost):</strong></p>
+                <ul>
+                  <li>Full-Time: You will need to take your belongings with you, you can use any available seat.</li>
+                  <li>Part-Time: You can use any available seat during your shift.</li>
+                </ul>
+                <p><strong>Shifts Details for Part-Time Plan</strong></p>
+                <ul>
+                  <li>First Shift: 7 AM - 3 PM</li>
+                  <li>Second Shift: 3 PM - 11 PM</li>
+                </ul>
               </div>
             </div>
           </div>
 
-         
-            <Link href={'/registration'}>
+          <Link href={'/registration'}>
             <div className={styles.servicesBlock}>
-            <div className={styles.service}>
-              <h3 className={styles.serviceHeading}>ROOM</h3>
-              <p>Comfortable rooms available for students.</p>
-              <p>Contact: 123-456-7890</p>
+              <div className={styles.service}>
+                <h3 className={styles.serviceHeading}>ROOM</h3>
+                <p>Comfortable rooms available for students.</p>
+                <p>Contact: 123-456-7890</p>
+              </div>
+              <div className={styles.service}>
+                <h3 className={styles.serviceHeading}>TIFFIN</h3>
+                <p>Healthy tiffin services at affordable prices.</p>
+                <p>Contact: 098-765-4321</p>
+              </div>
+              <div className={styles.service}>
+                <h3 className={styles.serviceHeading}>HOME TUTOR</h3>
+                <p>Experienced tutors for personalized learning.</p>
+                <p>Contact: 456-789-0123</p>
+              </div>
+              <div className={styles.service}>
+                <h3 className={styles.serviceHeading}>DONATE BOOK</h3>
+                <p>Donate books and spread knowledge.</p>
+                <p>Contact: 789-012-3456</p>
+              </div>
             </div>
-            <div className={styles.service}>
-              <h3 className={styles.serviceHeading}>TIFFIN</h3>
-              <p>Healthy tiffin services at affordable prices.</p>
-              <p>Contact: 098-765-4321</p>
-            </div>
-            <div className={styles.service}>
-              <h3 className={styles.serviceHeading}>HOME TUTOR</h3>
-              <p>Experienced tutors for personalized learning.</p>
-              <p>Contact: 456-789-0123</p>
-            </div>
-            <div className={styles.service}>
-              <h3 className={styles.serviceHeading}>DONATE BOOK</h3>
-              <p>Donate books and spread knowledge.</p>
-              <p>Contact: 789-012-3456</p>
-            </div>
-          </div>
 
-        <button className={styles.b}>ENROLL NOW</button>
-        </Link>
-        
+            <button className={styles.b}>ENROLL NOW</button>
+          </Link>
         </div>
       ) : (
         <LoadingSkeleton />
@@ -204,6 +186,3 @@ const Library = () => {
 }
 
 export default Library
-
-
-

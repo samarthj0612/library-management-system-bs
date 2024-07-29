@@ -338,3 +338,24 @@ th, td {
         margin: 5px 0px;
     }
 }
+.profileData h6{
+   margin: 40px 0px 0 50px;
+}
+
+.loadingContainer, .errorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 18px;
+    color: #333;
+}
+
+.loadingContainer {
+    color: #333;
+    /* Styling for the loading message */
+}
+
+.errorContainer {
+    color: red; /* Highlight error message in red */
+}

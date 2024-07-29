@@ -1,32 +1,66 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Layout from '../page';
-import data from '../../../data/userData';
+// import './User.css'; // Import CSS for styling
 
-const User = () =>{
+const User = () => {
+    const [studentData, setStudentData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const studentId = "1";
+
+    useEffect(() => {
+        const fetchStudentData = async () => {
+            try {
+                const response = await fetch('http://localhost:3001/studentDetails/${studentId}'); // Update the studentId dynamically as needed
+                if (!response.ok) {
+                    throw new Error(`Error: ${response.status}`);
+                }
+                const data = await response.json();
+                setStudentData(data.studentDetails);
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchStudentData();
+    }, [studentId]);
+
     return (
         <Layout>
             <div className="profile">
-                <h5>Welcome: Username</h5>
-                <div className="profileBox">
-                    <div className="profileImage">
-                        <img src={data[0].image} alt="Profile" />
-                    </div>
-                    
-                    <div className="profileData">
-                        {data.map(item=>(
-                            <div key={item.id}>
-                                <h6>Name: {item.name}</h6>
-                                <h6>Seat No: {item.seatNo}</h6>
-                                <h6>Joining Date: {item.joiningDate}</h6>
-                                <h6>Your Plan Type: {item.YourPlanType}</h6>   
-                                <h6>Renewal Date: {item.RenewalDate}</h6> 
+                <div className="profileContainer">
+                    {/* Show loading spinner/message only within the profile container */}
+                    {loading ? (
+                        <div className="loadingContainer">
+                            <div>Loading...</div>
+                        </div>
+                    ) : error ? (
+                        <div className="errorContainer">
+                            <div>Error: {error}</div>
+                        </div>
+                    ) : (
+                        <div className="profileBox">
+                            <div className="profileImage">
+                                <img src={studentData.image} alt="Profile" />
                             </div>
-                        ))}
-                    </div>
+                            <div className="profileData">
+                                <div key={studentData.id}>
+                                    <h5>Welcome: {studentData.name}</h5>
+                                    <h6>Seat No: {studentData.seatNo}</h6>
+                                    <h6>Joining Date: {studentData.joiningDate}</h6>
+                                    <h6>Your Plan Type: {studentData.YourPlanType}</h6>   
+                                    <h6>Renewal Date: {studentData.RenewalDate}</h6> 
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </Layout>
-    )
+    );
 }
 
 export default User;
