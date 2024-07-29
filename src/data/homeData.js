@@ -4,7 +4,7 @@ const branches = [
   { route: 'library3', image: '/img/libraries/img9.jpg', location: 'P & T Chouraha' },
   { route: 'library4', image: '/img/libraries/img10.jpg', location: 'Raisen ' },
   { route: 'library5', image: '/img/libraries/img11.jpg', location: 'Bareli' },
-  { route: 'library6', image: '/img/libraries/1.jpg', location: 'For Franchise/open new library'},
+//   { route: 'contact', image: '/img/libraries/1.jpg', location: 'For Franchise/open new library'},
 ];
 
 const facilities = [{
@@ -74,13 +74,14 @@ const toppers = [
   { name: 'Shashi kumar', image: '/img/libraries/img42.jpg', exam: 'UPSC', rank: 4 , post: 'Assistant Director civil aviation' },
   { name: 'Hardik ramani', image: '/img/libraries/img48.jpg', exam: 'GPSC', rank: 3, post: 'State Tax inspector at GST DEP.'},
   { name: 'Harendra murmu', image: '/img/libraries/img45.jpg', exam: 'ISRO', rank: 1, post: 'Technical assistant at ISRO'},
+  { name: 'Neha sahu', image: '/img/libraries/img51.jpg', exam: 'SSC, Corporative Bank, Patvari', rank: 3, post: 'TECH'},
+  { name: 'Sushil sahu', image: '/img/libraries/img41.jpg', exam: 'ISRO,MPPGCL,RAILWAY', rank: 3, post: 'TECH'},
+  { name: 'Ritu sahu', image: '/img/libraries/img52.jpg', exam: 'Group 2, Subgroup 4', rank: 3, post: 'TECH'},
   { name: 'Ram deen', image: '/img/libraries/img45.jpg', exam: 'MPPGCL', rank: 1, post: 'Plant assistant at thermal power plant'},
-  { name: 'Anil ajmer', image: '/img/libraries/img45.jpg', exam: 'MPPGCL', rank: 2, post: 'Plant assistant at thermal power plant' },
-  { name: 'Sushil sahu', image: '/img/libraries/img41.jpg', exam: 'ISRO,MPPGCL,RAILWAY', rank: 3, post: 'TECH' },
+  { name: 'Anil ajmer', image: '/img/libraries/img50.jpg', exam: 'MPPGCL', rank: 2, post: 'Plant assistant at thermal power plant' },
   { name: 'Ajit paswan', image: '/img/libraries/img46.jpg', exam: 'RAILWAY', rank: 3, post: 'Signalling and Telecommunications'},
   { name: 'Kailash Vyas ', image: '/img/libraries/img47.jpg', exam: 'Malviya National Institute of Technology Jaipur ', rank: 3, post: 'Technical Assistant' },
   { name: 'Mohammad Faijan', image: '/img/libraries/img49.jpg', exam: 'CTET, UPTET, REET, MPTET qualified', rank: 3, post: 'Primary Teacher'},
-  { name: 'Sushil sahu', image: '/img/libraries/img41.jpg', exam: 'ISRO,MPPGCL,RAILWAY', rank: 3, post: 'TECH'},
 ];
 
 export { branches, facilities, toppers };

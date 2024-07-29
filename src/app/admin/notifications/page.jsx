@@ -5,7 +5,7 @@ const Notice = () =>{
     return (
         <Layout>
             <div>
-                HI
+            Show Notifications Here
             </div>
         </Layout>
     

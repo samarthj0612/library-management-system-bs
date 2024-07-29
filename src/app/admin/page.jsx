@@ -34,7 +34,7 @@ const AdminLayout = ({children}) => {
             <li className={activeItem === 4 ? 'active' : ''} onClick={() => handleClick(4)}>
               <div>
 
-              <li><Link href={`/admin/notifications`}>Add Branch</Link></li>
+              <li><Link href={`/admin/addBranch`}>Add Branch</Link></li>
               </div>
             </li>
 
