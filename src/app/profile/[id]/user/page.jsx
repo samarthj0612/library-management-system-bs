@@ -1,18 +1,19 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Layout from '../page';
+import { useParams } from "next/navigation";
 // import './User.css'; // Import CSS for styling
 
 const User = () => {
     const [studentData, setStudentData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const studentId = "1";
+    const id = useParams();
 
     useEffect(() => {
         const fetchStudentData = async () => {
             try {
-                const response = await fetch('http://localhost:3001/studentDetails/${studentId}'); // Update the studentId dynamically as needed
+                const response = await fetch(`http://localhost:3001/${id}/user`); // Update the studentId dynamically as needed
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status}`);
                 }

@@ -31,6 +31,9 @@ const RegistrationForm = () => {
     confirmPassword: ''
   });
 
+  const [loading, setLoading] = useState(false);
+  const [error, setError ] = useState(null)
+
   const router = useRouter();
 
   const handleChange = (e) => {
@@ -44,36 +47,34 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match');
-      return;
-    }
+    
+    setLoading(true);
+    setError(null);
 
     try {
-      const formDataToSubmit = new FormData();
-      console.log(formDataToSubmit)
-      for (const key in formData) {
-        formDataToSubmit.append(key, formData[key]);
-      }
-
       const response = await fetch('http://localhost:3001/auth/register', {
         method: 'POST',
-        body: formDataToSubmit,
         headers: {
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify(formData),
       });
 
+      const result = await response.json();
+
+      console.log("return data", result )
+
       if (response.ok) {
-        alert('Registration successful');
-        router.push('/login');
+        // Handle successful registration
+        router.push('/success'); // Redirect to a success page
       } else {
-        const errorData = await response.json();
-        alert(errorData.message || 'Registration failed');
+        // Handle errors
+        setError(result.message || 'Something went wrong.');
       }
     } catch (error) {
-      console.error('Registration error:', error);
-      alert('Registration failed. Please check your details and try again.');
+      setError('Network error: ' + error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -89,7 +90,7 @@ const RegistrationForm = () => {
               type="text"
               id="Name"
               name="name"
-              required
+              // required
               value={formData.name}
               onChange={handleChange}
               />
@@ -99,7 +100,7 @@ const RegistrationForm = () => {
                 type="tel"
                 id="phoneNumber"
                 name="phoneNumber"
-                required
+                // required
                 value={formData.phoneNumber}
                 onChange={handleChange}
               />
@@ -194,7 +195,7 @@ const RegistrationForm = () => {
                 id="password"
                 name="password"
                 minLength="8"
-                required
+                // required
                 value={formData.password}
                 onChange={handleChange}
               />
@@ -206,7 +207,7 @@ const RegistrationForm = () => {
                 type="email"
                 id="email"
                 name="email"
-                required
+                // required
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -225,7 +226,7 @@ const RegistrationForm = () => {
                 type="date"
                 id="dateOfBirth"
                 name="dateOfBirth"
-                required
+                // required
                 value={formData.dateOfBirth}
                 onChange={handleChange}
               />
@@ -298,7 +299,7 @@ const RegistrationForm = () => {
                 id="confirmPassword"
                 name="confirmPassword"
                 minLength="8"
-                required
+                // required
                 value={formData.confirmPassword}
                 onChange={handleChange}
               />
@@ -312,7 +313,7 @@ const RegistrationForm = () => {
                     type="checkbox"
                     id="followRules"
                     name="followRules"
-                    required
+                    // required
                   />
                   I always follow the rules and regulations of the Library and never do any sort of misbehavior with Staff members.
                 </label>
